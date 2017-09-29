@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout android:id="@+id/drawer_layout" android:background="@color/background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@+id/content_frame" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@+id/container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textStyle="bold" android:textColor="@color/menu_text" android:gravity="center" android:id="@+id/tv_norecords" android:padding="@dimen/dp_20" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="!! There is no record Available !!" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dip">
+                <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@drawable/list_bg" android:cacheColorHint="#00000000" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+    <LinearLayout android:layout_gravity="start" android:orientation="vertical" android:id="@+id/drawer" android:layout_width="@dimen/dp_247" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@+id/ll_top" android:layout_width="@dimen/dp_247" android:layout_height="@dimen/dp_247">
+            <ImageView android:id="@+id/iv_image" android:layout_width="@dimen/dp_247" android:layout_height="@dimen/dp_247" />
+            <RelativeLayout android:orientation="vertical" android:id="@+id/toplayout" android:clickable="true" android:layout_width="@dimen/dp_247" android:layout_height="@dimen/dp_247">
+                <RelativeLayout android:id="@+id/rl_top_01" android:layout_width="@dimen/dp_247" android:layout_height="wrap_content" android:layout_margin="@dimen/dp_20">
+                    <ImageView android:id="@+id/iv_round" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/sp_15" android:textColor="@color/white" android:id="@+id/tv_now_playing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Now Playing" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="@dimen/dp_247" android:layout_height="wrap_content" android:layout_margin="@dimen/dp_20" android:layout_alignParentBottom="true">
+                    <TextView android:textSize="@dimen/sp_13" android:textColor="@color/white" android:id="@+id/tv_artist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+                    <TextView android:textSize="@dimen/sp_15" android:textColor="@color/white" android:id="@+id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_below="@+id/tv_artist" />
+                    <ImageView android:id="@+id/iv_play" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_action_play" android:layout_alignParentRight="true" />
+                    <ImageView android:id="@+id/iv_pause" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_action_pause" android:layout_alignParentRight="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <ListView android:textColor="@android:color/white" android:id="@+id/drawer_list" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@android:color/darker_gray" android:dividerHeight="0.100000024dip" android:choiceMode="singleChoice" />
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>

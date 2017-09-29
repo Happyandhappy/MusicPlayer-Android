@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@+id/ll_image" android:layout_width="@dimen/dp_80" android:layout_height="@dimen/dp_80" android:layout_centerVertical="true">
+        <ImageView android:id="@+id/iv_image" android:padding="@dimen/dp_2" android:layout_width="@dimen/dp_80" android:layout_height="@dimen/dp_80" android:src="@drawable/noimage" android:scaleType="fitXY" android:adjustViewBounds="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:contentDescription="@string/img_desc" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10" android:layout_marginRight="@dimen/dp_40" android:layout_toRightOf="@+id/ll_image" android:layout_centerVertical="true">
+        <com.mzdevelopment.musicsearchpro.view.FontableTextView android:textSize="@dimen/sp_14" android:textColor="@color/menu_text" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="musbjdnsk fdnfkdsff fr fr fr fr fr fr fr" android:maxLines="2" app:font="RobotoCondensed-Regular_0.ttf" />
+        <com.mzdevelopment.musicsearchpro.view.FontableTextView android:textSize="@dimen/sp_13" android:textColor="@color/menu_text" android:id="@+id/username" android:paddingTop="@dimen/dp_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="musbjdnsk fdnfkdsf" android:maxLines="1" app:font="RobotoCondensed-Regular_0.ttf" />
+    </LinearLayout>
+    <ImageView android:id="@+id/iv_checkBox" android:focusable="false" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_10" android:src="@drawable/star_white" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/img_desc" />
+</RelativeLayout>

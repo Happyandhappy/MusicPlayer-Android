@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mzdevelopment.musicsearchpro">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.mzdevelopment.musicsearchpro.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.mzdevelopment.musicsearchpro.permission.C2D_MESSAGE"/>
+    <uses-feature android:glEsVersion="0x20000" android:required="true"/>
+    <application android:allowBackup="true" android:icon="@drawable/app_icon" android:label="@string/app_name" android:largeHeap="true" android:name=".MainApp" android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name=".Splash" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".Search" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <meta-data android:name="android.app.default_searchable" android:value=".Search"/>
+        <activity android:name=".musicplayer.MusicPlayerActivity"/>
+        <activity android:name=".musicplayer.PlayListActivity"/>
+        <activity android:label="@string/app_name" android:name=".RecentSongList" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".PlayList" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".Songs" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".Chart" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".Artist" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ArtistSongList" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name=".musicplayer.AudioPlayerActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <service android:enabled="true" android:exported="true" android:name=".service.SongService"/>
+        <receiver android:name=".receiver.NotificationBroadcast">
+            <intent-filter>
+                <action android:name="com.mzdevelopment.musicsearchpro.delete"/>
+                <action android:name="com.mzdevelopment.musicsearchpro.pause"/>
+                <action android:name="com.mzdevelopment.musicsearchpro.next"/>
+                <action android:name="com.mzdevelopment.musicsearchpro.play"/>
+                <action android:name="com.mzdevelopment.musicsearchpro.previous"/>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name=".receiver.CallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="true" android:name="com.google.android.gms.appinvite.PreviewActivity" android:theme="@style/Theme.AppInvite.Preview">
+            <intent-filter>
+                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver"/>
+        <service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService"/>
+        <service android:name="com.google.android.gms.cast.framework.ReconnectionService"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.tagmanager.TagManagerService"/>
+        <activity android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity" android:noHistory="true">
+            <intent-filter>
+                <data android:scheme="tagmanager.c.com.mzdevelopment.musicsearchpro"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.mzdevelopment.musicsearchpro"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.mzdevelopment.musicsearchpro.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

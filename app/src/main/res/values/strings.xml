@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Dialog_Network">"To use the application network connection is required.
+
+Please check your network settings."</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Music Search Pro</string>
+    <string name="back">Back</string>
+    <string name="cast_invalid_stream_duration_text">--:--</string>
+    <string name="cast_invalid_stream_position_text">--:--</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="empty_text">Select song from below to play</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="idle">Idle</string>
+    <string name="img_desc">image</string>
+    <string name="next">Next</string>
+    <string name="open_playlist">Open Playlist</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="player">Audio Player</string>
+    <string name="player_button">Album Art Screen</string>
+    <string name="song_not_available">This song is not available</string>
+    <string name="tagmanager_preview_dialog_button">Continue</string>
+    <string name="tagmanager_preview_dialog_message">Preview mode updated.</string>
+    <string name="tagmanager_preview_dialog_title">Preview</string>
+    <string name="wait_message">Please Wait</string>
+</resources>

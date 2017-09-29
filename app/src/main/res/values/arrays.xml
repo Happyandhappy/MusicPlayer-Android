@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+    </array>
+    <string-array name="nav_drawer_items">
+        <item>Charts</item>
+        <item>Search</item>
+        <item>Recents</item>
+        <item>Songs</item>
+        <item>Artists</item>
+        <item>Playlists</item>
+    </string-array>
+</resources>

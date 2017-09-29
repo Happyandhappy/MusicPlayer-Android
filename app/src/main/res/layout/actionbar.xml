@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:background="@color/action_bar" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@+id/iv_left" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10" android:layout_marginRight="@dimen/dp_10" android:src="@drawable/menu" android:layout_centerVertical="true" />
+    <com.mzdevelopment.musicsearchpro.view.FontableTextView android:textSize="@dimen/sp_16" android:textColor="@color/white" android:id="@+id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="maxds" android:layout_toRightOf="@+id/iv_left" android:layout_centerVertical="true" app:font="RobotoCondensed-Regular_0.ttf" />
+</RelativeLayout>
